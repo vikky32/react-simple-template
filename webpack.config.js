@@ -3,9 +3,10 @@ const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin")
 
-module.exports = (env, argv) => {
-  const devMode = argv.mode !== 'production'
-  console.log(devMode)
+module.exports = (env, options) => {
+  
+  const isProduction = options.mode === 'production';
+
   return {
     entry: ['babel-polyfill', './src/app.js'],
     output: {
@@ -17,7 +18,7 @@ module.exports = (env, argv) => {
         new UglifyJsPlugin({
           cache: true,
           parallel: true,
-          sourceMap: true // set to true if you want JS source maps
+          sourceMap: true
         }),
         new OptimizeCSSAssetsPlugin({})
       ]
@@ -50,7 +51,7 @@ module.exports = (env, argv) => {
       }
     ]
     },
-    devtool: 'source-map',
+    devtool: isProduction ? 'source-map' : 'cheap-module-eval-source-map',
     devServer: {
       contentBase: path.join(__dirname, 'public'),
       open: true,
