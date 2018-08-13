@@ -7,12 +7,44 @@
     "build": "webpack --mode production",
     "dev-server": "webpack-dev-server --mode development",
     "test": "cross-env NODE_ENV=test jest --config=jest.config.json",
+    "lint": "eslint --quiet --ext .js src",
+    "lint:fix": "eslint --quiet --fix --ext .js src",
     "start": "node server/server.js"
+  },
+  "eslintConfig": {
+    "parser": "babel-eslint",
+    "parserOptions": {
+      "ecmaVersion": 7,
+      "no-underscore-dangle": "error",
+      "sourceType": "module"
+    },
+    "plugins": [
+      "react",
+      "react-native"
+    ],
+    "extends": "airbnb",
+    "rules": {
+      "no-undef": 0,
+      "import/extensions": 0,
+      "import/prefer-default-export": 0,
+      "import/no-extraneous-dependencies": 0,
+      "import/no-unresolved": [
+        "error"
+      ],
+      "react/jsx-filename-extension": 0,
+      "react/jsx-no-bind": 0,
+      "linebreak-style": 0,
+      "react/no-string-refs": 1,
+      "react/forbid-prop-types": 1,
+      "no-prototype-builtins": 0
+    }
   },
   "dependencies": {
     "antd": "^3.7.3",
+    "babel": "^6.23.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.6",
     "babel-loader": "^7.1.5",
     "babel-plugin-import": "^1.8.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
@@ -21,6 +53,18 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^1.0.0",
+    "eslint": "^5.3.0",
+    "eslint-config-airbnb": "^17.0.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "-confeslintig-defaults": "^9.0.0",
+    "eslint-config-google": "^0.9.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-react": "^7.10.0",
+    "eslint-plugin-react-native": "^3.2.1",
+    "eslint-plugin-standard": "^3.1.0",
     "express": "^4.16.3",
     "mini-css-extract-plugin": "^0.4.1",
     "node-sass": "^4.9.2",
