@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js lint
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js
 
 PATH: 
   C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Git\cmd;C:\HashiCorp\Vagrant\bin;C:\Program Files (x86)\Brackets\command;C:\Program Files\MySQL\MySQL Utilities 1.6\;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\nodejs\;C:\Program Files\Microsoft VS Code\bin;C:\Users\user\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Microsoft VS Code\bin;C:\Users\user\AppData\Local\Yarn\bin;C:\Users\user\AppData\Roaming\npm;C:\Program Files\heroku\bin
@@ -14,13 +14,17 @@ Platform:
   win32 x64
 
 Trace: 
-  SyntaxError: C:\Users\user\Desktop\react-simple-template\package.json: Unexpected token } in JSON at position 1111
-      at JSON.parse (<anonymous>)
-      at C:\Program Files (x86)\Yarn\lib\cli.js:1130:59
-      at Generator.next (<anonymous>)
-      at step (C:\Program Files (x86)\Yarn\lib\cli.js:98:30)
-      at C:\Program Files (x86)\Yarn\lib\cli.js:109:13
-      at <anonymous>
+  Error: https://registry.yarnpkg.com/eslintig-config-defaults: Not found
+      at Request.params.callback [as _callback] (C:\Program Files (x86)\Yarn\lib\cli.js:65656:18)
+      at Request.self.callback (C:\Program Files (x86)\Yarn\lib\cli.js:134675:22)
+      at emitTwo (events.js:126:13)
+      at Request.emit (events.js:214:7)
+      at Request.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:135658:10)
+      at emitOne (events.js:116:13)
+      at Request.emit (events.js:211:7)
+      at IncomingMessage.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:135578:12)
+      at Object.onceWrapper (events.js:313:30)
+      at emitNone (events.js:111:20)
 
 npm manifest: 
   {
@@ -40,12 +44,9 @@ npm manifest:
       "parser": "babel-eslint",
       "parserOptions": {
         "ecmaVersion": 7,
-        "sourceType": "module",
-        "ecmaFeatures": {
-          "jsx": true
-        }
+        "no-underscore-dangle": "error",
+        "sourceType": "module"
       },
-      
       "plugins": [
         "react",
         "react-native"
@@ -65,7 +66,7 @@ npm manifest:
         "react/no-string-refs": 1,
         "react/forbid-prop-types": 1,
         "no-prototype-builtins": 0
-      },
+      }
     },
     "dependencies": {
       "antd": "^3.7.3",
@@ -81,9 +82,10 @@ npm manifest:
       "babel-preset-env": "^1.7.0",
       "babel-preset-react": "^6.24.1",
       "css-loader": "^1.0.0",
-      "eslint": "^5.3.0",
+      "eslint": "^4.15.0",
       "eslint-config-airbnb": "^17.0.0",
-      "eslint-config-defaults": "^9.0.0",
+      "eslint-config-airbnb-base": "^13.1.0",
+      "eslintig-config-defaults": "^9.0.0",
       "eslint-config-google": "^0.9.1",
       "eslint-config-standard": "^11.0.0",
       "eslint-plugin-import": "^2.14.0",
@@ -2763,6 +2765,14 @@ Lockfile:
       object.assign "^4.1.0"
       object.entries "^1.0.4"
   
+  eslint-config-airbnb-base@^13.1.0:
+    version "13.1.0"
+    resolved "https://registry.yarnpkg.com/eslint-config-airbnb-base/-/eslint-config-airbnb-base-13.1.0.tgz#b5a1b480b80dfad16433d6c4ad84e6605052c05c"
+    dependencies:
+      eslint-restricted-globals "^0.1.1"
+      object.assign "^4.1.0"
+      object.entries "^1.0.4"
+  
   eslint-config-airbnb@^17.0.0:
     version "17.0.0"
     resolved "https://registry.yarnpkg.com/eslint-config-airbnb/-/eslint-config-airbnb-17.0.0.tgz#1bb8c4255483320bb68c3b614f71ae6058b0b2db"
@@ -2779,9 +2789,9 @@ Lockfile:
     version "0.9.1"
     resolved "https://registry.yarnpkg.com/eslint-config-google/-/eslint-config-google-0.9.1.tgz#83353c3dba05f72bb123169a4094f4ff120391eb"
   
-  eslint-config-standard@^12.0.0-alpha.0:
-    version "12.0.0-alpha.0"
-    resolved "https://registry.yarnpkg.com/eslint-config-standard/-/eslint-config-standard-12.0.0-alpha.0.tgz#f21f864ba7f52f2eb98670c94b03322186ac18a5"
+  eslint-config-standard@^11.0.0:
+    version "11.0.0"
+    resolved "https://registry.yarnpkg.com/eslint-config-standard/-/eslint-config-standard-11.0.0.tgz#87ee0d3c9d95382dc761958cbb23da9eea31e0ba"
   
   eslint-import-resolver-node@^0.3.1:
     version "0.3.2"

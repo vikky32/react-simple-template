@@ -6,7 +6,7 @@ const TestMe = () => (
   <div>
     <input type="text" />
     <p>
-      {sdfsdf}
+      {'some text'}
     </p>
   </div>
 );
