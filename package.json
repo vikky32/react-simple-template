@@ -6,10 +6,13 @@
   "scripts": {
     "build": "webpack --mode production",
     "dev-server": "webpack-dev-server --mode development",
-    "test": "cross-env NODE_ENV=test jest --config=jest.config.json",
+    "test": "jest",
     "lint": "eslint --quiet --ext .js src",
-    "lint:fix": "eslint --quiet --fix --ext .js src",
-    "start": "node server/server.js"
+    "lint:fix": "eslint --quiet --fix --ext .js src"
+  },
+  "jest": {
+    "verbose": true,
+    "testURL": "http://localhost/"
   },
   "eslintConfig": {
     "parser": "babel-eslint",
